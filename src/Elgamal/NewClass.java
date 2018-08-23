@@ -10,8 +10,8 @@ public class NewClass {
         Elgamal elgamal = new Elgamal();
         List<BigInteger> list = new ArrayList<>();
         List<BigInteger> list2 = new ArrayList<>();
-        list = elgamal.Encrypt(new BigInteger("3"));
-        list2 = elgamal.Encrypt(new BigInteger("5"));
+        list = elgamal.Encrypt(new BigInteger("1"));
+        list2 = elgamal.Encrypt(new BigInteger("2"));
 
         BigInteger m = elgamal.Decrypt(list);
         System.out.println("Decrypt:" + m);
@@ -20,7 +20,11 @@ public class NewClass {
         List<BigInteger> list3 = elgamal.Encrypt_Add_Homomorph(list, list2);
         m = elgamal.Decrypt(list3);
         System.out.println("Add_Homomorph:" + m);
-        
+        for(int i=0;i<2;i++){
+            list2=elgamal.Encrypt_Add_Homomorph(list2, list2);
+        }
+        m=elgamal.Decrypt(list2);
+        System.out.println(m);
 
     }
 }

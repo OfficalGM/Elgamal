@@ -16,7 +16,7 @@ public class Elgamal {
 
     public Elgamal() {
         genkey(10);
-        
+
     }
 
     private void genkey(int nb_bits) {
@@ -81,7 +81,7 @@ public class Elgamal {
         return list3;
     }
 
-    
+
 
     private BigInteger random_number(BigInteger n) {
         return new BigInteger(n.bitLength(), new SecureRandom()).mod(n);
